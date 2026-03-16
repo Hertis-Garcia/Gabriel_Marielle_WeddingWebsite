@@ -41,8 +41,6 @@ export default function Home() {
       <div className="absolute inset-0 bg-[url('/bg.png')] bg-cover bg-center opacity-40"></div>
 
       <div className="relative flex flex-col items-center">
-        {/* TOP IMAGE STRIP */}
-
         {/* INVITATION CARD */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -137,17 +135,17 @@ export default function Home() {
             <div className="mt-8 flex justify-center">
               <button
                 className="
-      px-6 py-3
-      text-sm tracking-widest
-      border border-gray-400
-      text-gray-700
-      rounded-sm
-      transition-all duration-300
-      hover:bg-[#F5E6C8]
-      hover:border-[#d6c29a]
-      hover:text-[#5a4a2f]
-    "
-              >
+                      px-6 py-3
+                      text-sm tracking-widest
+                      border border-gray-400
+                      text-gray-700
+                      rounded-sm
+                      transition-all duration-300
+                      hover:bg-[#F5E6C8]
+                      hover:border-[#d6c29a]
+                      hover:text-[#5a4a2f]
+                    "
+                >
                 CLICK FOR MORE DETAILS
               </button>
             </div>
