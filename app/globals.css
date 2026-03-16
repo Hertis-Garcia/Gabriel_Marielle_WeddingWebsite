@@ -18,7 +18,11 @@
     --foreground: #ededed;
   }
 }
-
+.bg-hero {
+  background-image: url('/bg.png');
+  background-size: cover;
+  background-position: center;
+}
 body {
   background: var(--background);
   color: var(--foreground);

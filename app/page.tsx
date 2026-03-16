@@ -1,65 +1,159 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const weddingDate = new Date("2026-06-20T00:00:00");
+
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = weddingDate.getTime() - now;
+
+      if (distance <= 0) {
+        clearInterval(timer);
+        return;
+      }
+
+      setTimeLeft({
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((distance / (1000 * 60)) % 60),
+        seconds: Math.floor((distance / 1000) % 60),
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="relative min-h-screen flex items-center justify-center bg-neutral-900 text-white">
+      {/* Background */}
+      <div className="absolute inset-0 bg-[url('/bg.png')] bg-cover bg-center opacity-40"></div>
+
+      <div className="relative flex flex-col items-center">
+        {/* TOP IMAGE STRIP */}
+
+        {/* INVITATION CARD */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
+          className="relative max-w-xl shadow-xl rounded-md overflow-hidden 
+             bg-[url('/bg_ic.png')] bg-cover bg-center"
+        >
+          {/* LIGHT OVERLAY FOR READABILITY */}
+          <div className="absolute inset-0 bg-white/20"></div>
+
+          {/* IMAGE STRIP */}
+          <div className="relative grid grid-cols-3 w-full">
+            <div className="relative h-36">
+              <Image
+                src="/leff5.jpg"
+                alt="Couple Photo 1"
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            <div className="relative h-36">
+              <Image
+                src="/middle.jpg"
+                alt="Couple Photo 2"
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            <div className="relative h-36">
+              <Image
+                src="/right.jpg"
+                alt="Couple Photo 3"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          {/* CONTENT */}
+          <div className="relative p-10 text-center text-black">
+            <p className="tracking-widest text-sm text-gray-600">
+              WEDDING SOCIAL
+            </p>
+
+            <p className="text-xs text-gray-500 mb-4">IN HONOUR OF</p>
+
+            <h1 className="text-5xl font-serif font-bold leading-tight">
+              MARIELLE
+              <br />& GABRIEL
+            </h1>
+
+            {/* COUNTDOWN */}
+            <div className="mt-6 flex justify-center gap-6 text-center">
+              <div>
+                <p className="text-2xl font-semibold">{timeLeft.days}</p>
+                <p className="text-xs tracking-widest text-gray-600">DAYS</p>
+              </div>
+
+              <div>
+                <p className="text-2xl font-semibold">{timeLeft.hours}</p>
+                <p className="text-xs tracking-widest text-gray-600">HOURS</p>
+              </div>
+
+              <div>
+                <p className="text-2xl font-semibold">{timeLeft.minutes}</p>
+                <p className="text-xs tracking-widest text-gray-600">MIN</p>
+              </div>
+
+              <div>
+                <p className="text-2xl font-semibold">{timeLeft.seconds}</p>
+                <p className="text-xs tracking-widest text-gray-600">SEC</p>
+              </div>
+            </div>
+
+            <p className="mt-6 text-lg font-bold tracking-wide">
+              Saturday, June 20, 2026
+            </p>
+
+            <p className="text-sm text-gray-700 mt-2">
+              St. Michael the Archangel Parish
+            </p>
+
+            <p className="text-xs text-gray-600">
+              Gen. Evangelista Street, Poblacion, Bacoor, Cavite
+              <br />
+              Bacoor, Cavite
+            </p>
+
+            <div className="mt-8 flex justify-center">
+              <button
+                className="
+      px-6 py-3
+      text-sm tracking-widest
+      border border-gray-400
+      text-gray-700
+      rounded-sm
+      transition-all duration-300
+      hover:bg-[#F5E6C8]
+      hover:border-[#d6c29a]
+      hover:text-[#5a4a2f]
+    "
+              >
+                CLICK FOR MORE DETAILS
+              </button>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </main>
   );
 }
