@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Playfair_Display, EB_Garamond, Allura } from "next/font/google";
+import Link from "next/link";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -189,7 +190,8 @@ export default function Home() {
             </p>
 
             <div className="mt-10 flex justify-center">
-              <button
+              <Link
+                href="/details"
                 className="
                   px-8 py-3
                   text-sm tracking-[0.25em]
@@ -207,7 +209,7 @@ export default function Home() {
                 "
               >
                 CLICK FOR MORE DETAILS
-              </button>
+              </Link>
             </div>
           </div>
         </motion.div>
