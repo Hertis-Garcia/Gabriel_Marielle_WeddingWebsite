@@ -4,7 +4,9 @@
   --background: #ffffff;
   --foreground: #171717;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -19,7 +21,7 @@
   }
 }
 .bg-hero {
-  background-image: url('/bg.png');
+  background-image: url("/bg.png");
   background-size: cover;
   background-position: center;
 }
