@@ -3,6 +3,22 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Playfair_Display, EB_Garamond, Allura } from "next/font/google";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
+
+const garamond = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+});
+
+const allura = Allura({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export default function Home() {
   const weddingDate = new Date("2026-06-20T00:00:00");
@@ -47,7 +63,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
           className="relative max-w-xl shadow-xl rounded-md overflow-hidden 
-             bg-[url('/bg_ic.png')] bg-cover bg-center"
+             bg-[url('/texture2.jpg')] bg-cover bg-center"
         >
           {/* LIGHT OVERLAY FOR READABILITY */}
           <div className="absolute inset-0 bg-white/20"></div>
@@ -84,37 +100,77 @@ export default function Home() {
 
           {/* CONTENT */}
           <div className="relative p-10 text-center text-black">
-            <p className="tracking-widest text-sm text-gray-600">
-              WEDDING SOCIAL
+            <p
+              className={`${garamond.className} tracking-[0.3em] text-sm text-gray-600`}
+            >
+              AS THEY BEGIN THEIR FOREVER
             </p>
-
-            <p className="text-xs text-gray-500 mb-4">IN HONOUR OF</p>
-
-            <h1 className="text-5xl font-serif font-bold leading-tight">
+            <p className={`${allura.className} text-xl mt-4 text-gray-700`}>
+              the wedding of
+            </p>
+            <h1
+              className={`${playfair.className} text-5xl leading-tight tracking-wide`}
+            >
               MARIELLE
               <br />& GABRIEL
             </h1>
 
             {/* COUNTDOWN */}
-            <div className="mt-6 flex justify-center gap-6 text-center">
-              <div>
-                <p className="text-2xl font-semibold">{timeLeft.days}</p>
-                <p className="text-xs tracking-widest text-gray-600">DAYS</p>
-              </div>
+            <div className="mt-8 flex justify-center">
+              <div
+                className="
+      px-6 py-4
+      rounded-md
+      border border-[#d8cfc2]
+      bg-white/30 backdrop-blur-sm
+      shadow-[0_2px_12px_rgba(0,0,0,0.04)]
+    "
+              >
+                <div className="flex gap-6 text-center">
+                  <div>
+                    <p
+                      className={`${garamond.className} text-2xl font-semibold text-[#2f2a26]`}
+                    >
+                      {timeLeft.days}
+                    </p>
+                    <p className="text-[10px] tracking-[0.25em] text-gray-500 mt-1">
+                      DAYS
+                    </p>
+                  </div>
 
-              <div>
-                <p className="text-2xl font-semibold">{timeLeft.hours}</p>
-                <p className="text-xs tracking-widest text-gray-600">HOURS</p>
-              </div>
+                  <div>
+                    <p
+                      className={`${garamond.className} text-2xl font-semibold text-[#2f2a26]`}
+                    >
+                      {timeLeft.hours}
+                    </p>
+                    <p className="text-[10px] tracking-[0.25em] text-gray-500 mt-1">
+                      HOURS
+                    </p>
+                  </div>
 
-              <div>
-                <p className="text-2xl font-semibold">{timeLeft.minutes}</p>
-                <p className="text-xs tracking-widest text-gray-600">MIN</p>
-              </div>
+                  <div>
+                    <p
+                      className={`${garamond.className} text-2xl font-semibold text-[#2f2a26]`}
+                    >
+                      {timeLeft.minutes}
+                    </p>
+                    <p className="text-[10px] tracking-[0.25em] text-gray-500 mt-1">
+                      MIN
+                    </p>
+                  </div>
 
-              <div>
-                <p className="text-2xl font-semibold">{timeLeft.seconds}</p>
-                <p className="text-xs tracking-widest text-gray-600">SEC</p>
+                  <div>
+                    <p
+                      className={`${garamond.className} text-2xl font-semibold text-[#2f2a26]`}
+                    >
+                      {timeLeft.seconds}
+                    </p>
+                    <p className="text-[10px] tracking-[0.25em] text-gray-500 mt-1">
+                      SEC
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -122,30 +178,34 @@ export default function Home() {
               Saturday, June 20, 2026
             </p>
 
-            <p className="text-sm text-gray-700 mt-2">
+            <p className={`${garamond.className} text-sm text-gray-700 mt-2`}>
               St. Michael the Archangel Parish
             </p>
 
-            <p className="text-xs text-gray-600">
+            <p className={`${garamond.className} text-xs text-gray-600`}>
               Gen. Evangelista Street, Poblacion, Bacoor, Cavite
               <br />
               Bacoor, Cavite
             </p>
 
-            <div className="mt-8 flex justify-center">
+            <div className="mt-10 flex justify-center">
               <button
                 className="
-                      px-6 py-3
-                      text-sm tracking-widest
-                      border border-gray-400
-                      text-gray-700
-                      rounded-sm
-                      transition-all duration-300
-                      hover:bg-[#F5E6C8]
-                      hover:border-[#d6c29a]
-                      hover:text-[#5a4a2f]
-                    "
-                >
+                  px-8 py-3
+                  text-sm tracking-[0.25em]
+                  rounded-md
+                  border border-[#d6c29a]
+                  bg-[#f7efe0]
+                  text-[#5a4a2f]
+                  shadow-sm
+                  transition-all duration-300
+
+                  hover:bg-[#e8d8b5]
+                  hover:border-[#cbb184]
+                  hover:shadow-md
+                  hover:-translate-y-[1px]
+                "
+              >
                 CLICK FOR MORE DETAILS
               </button>
             </div>
