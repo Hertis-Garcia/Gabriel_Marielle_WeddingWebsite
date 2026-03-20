@@ -170,21 +170,92 @@ export default function DetailsPage() {
         id="entourage"
         className="py-16 md:py-24 px-4 md:px-6 bg-[#f3f3f3] text-center"
       >
+        {/* Principal Sponsors */}
         <div className="max-w-4xl mx-auto space-y-8 md:space-y-10">
           <h2 className={`${playfair.className} text-2xl md:text-4xl`}>
-            Entourage
+            PRINCIPAL SPONSORS
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 text-sm">
             <div className={`${garamond.className}`}>
-              <p className="tracking-[0.2em] mb-3">PRINCIPAL SPONSORS</p>
               <p>Jose Labrador S. Oblefias</p>
               <p>Darwin E. Garcia</p>
+              <p>Leo P. Mascarinas</p>
+              <p>George E. I. La Salle</p>
+              <p>Engr. Fernando I. Balbanero</p>
+              <p>Ronnie Javier</p>
+              <p>Erwin Nethercott</p>
+              <p>Tito Rafael</p>
             </div>
 
             <div className={`${garamond.className}`}>
-              <p className="tracking-[0.2em] mb-3">MAID OF HONOR</p>
+              <p>Nariza G. Oblefias</p>
+              <p>Grace P. Cruzada</p>
+              <p>Delia S. Garcia</p>
+              <p>Amelia F. Espiritu</p>
+              <p>Noraida E. Nethercott</p>
+              <p>Marilyn L.</p>
+              <p>Marietta Cheng</p>
+              <p>Dra. Michele H. Fajardo</p>
+              <p>Dra. Noravi Delgado</p>
+            </div>
+          </div>
+
+          {/* Other Roles */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 text-sm mt-12">
+            <div className={`${garamond.className}`}>
+              <p className="tracking-[0.2em] mb-3">BEST MEN</p>
+              <p>Mark Adrian I. Pabalan</p>
+              <p>Erickson I. Pabalan</p>
+
+              <p className="tracking-[0.2em] mb-3 mt-6">GROOMSMEN</p>
+
+              <p>Jeffrey O. Millado</p>
+              <p>John Mark R. Gonzales</p>
+              <p>Jermelle G. Fresnoza</p>
+              <p>Jeffrey Francis Arma</p>
+              <p>King Philip I. Pabalan</p>
+
+              <p className="tracking-[0.2em] mb-3 mt-6">BRIDESMAIDS</p>
+              <p>Jessercene Camille P. Gonzales</p>
+              <p>Vanessa Rose V. Fresnoza</p>
+              <p>Ma. Roxanne I. Arma</p>
+              <p>Arianne C. Que</p>
+            </div>
+
+            <div className={`${garamond.className}`}>
+              <p className="tracking-[0.2em] mb-3 mt-6">MAID OF HONOR</p>
               <p>Maryll Camille L. Cantillo</p>
+
+              <p className="tracking-[0.2em] mb-3 mt-6">MATRON OF HONOR</p>
+              <p>Michelle P. Delos Reyes</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Secondary Sponsors */}
+        <div className="max-w-4xl mx-auto space-y-8 md:space-y-10 mt-12">
+          <h2 className={`${playfair.className} text-2xl md:text-4xl`}>
+            SECONDARY SPONSORS
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-sm">
+            <div className={`${garamond.className}`}>
+              <p className="tracking-[0.2em] mb-3">VEIL</p>
+              <p>Simon Aranda</p>
+              <p>Crystal P. Aranda</p>
+            </div>
+
+            <div className={`${garamond.className}`}>
+              <p className="tracking-[0.2em] mb-3">CANDLE</p>
+              <p>Erickson Jean A. Pabalan</p>
+              <p>Danica Paz S. Garcia</p>
+            </div>
+
+            <div className={`${garamond.className}`}>
+              <p className="tracking-[0.2em] mb-3">CORD</p>
+              <p>Daryll James M. Garcia</p>
+              <p>Angelique M. Caballo</p>
             </div>
           </div>
         </div>
