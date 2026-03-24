@@ -71,16 +71,16 @@ export default function Home() {
 
           {/* IMAGE STRIP */}
           <div className="relative grid grid-cols-3 w-full">
-            <div className="relative h-36">
+            <div className="relative h-48">
               <Image
-                src="/leff5.jpg"
+                src="/left.jpg"
                 alt="Couple Photo 1"
                 fill
                 className="object-cover"
               />
             </div>
 
-            <div className="relative h-36">
+            <div className="relative h-48">
               <Image
                 src="/middle.jpg"
                 alt="Couple Photo 2"
@@ -89,7 +89,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="relative h-36">
+            <div className="relative h-48">
               <Image
                 src="/right.jpg"
                 alt="Couple Photo 3"

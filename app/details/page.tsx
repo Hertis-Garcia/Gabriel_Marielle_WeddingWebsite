@@ -1,6 +1,7 @@
 "use client";
 
 import { Playfair_Display, EB_Garamond, Allura } from "next/font/google";
+import { Bell } from "lucide-react";
 
 const venueName = "St. Michael the Archangel Parish";
 const venueAddress = "Gen. Evangelista Street, Poblacion, Bacoor, Cavite";
@@ -54,16 +55,39 @@ const WeddingCalendar = () => {
   ];
 
   return (
-    <div
-      className="
+<div
+  className="
+        relative
         bg-[#f4efe7]
-        border border-[#d6c29a]/40
+        border border-[#d6c29a]/50
         rounded-t-[120px] rounded-b-[20px]
         px-6 py-8 md:px-8 md:py-10
-        shadow-[0_10px_30px_rgba(0,0,0,0.05)]
         max-w-[260px] mx-auto
+
+        /* OUTER DEPTH (stronger elevation) */
+        shadow-[0_20px_60px_rgba(0,0,0,0.12),0_8px_20px_rgba(0,0,0,0.08)]
+
+        /* SOFT GLOW BORDER (champagne highlight) */
+        before:absolute before:inset-0 before:rounded-t-[120px] before:rounded-b-[20px]
+        before:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.4),inset_0_0_25px_rgba(214,194,154,0.25)]
+        before:pointer-events-none
+
+        /* EDGE LIGHTING (top highlight for realism) */
+        after:absolute after:top-0 after:left-0 after:w-full after:h-1/2
+        after:bg-gradient-to-b after:from-white/30 after:to-transparent
+        after:rounded-t-[120px]
+        after:pointer-events-none
       "
-    >
+>
+  <div
+  className="
+    absolute top-5 left-5
+    text-[#c9a96a]
+    opacity-80
+  "
+>
+  <Bell size={20} strokeWidth={1.5} />
+</div>
       {/* MONTH */}
       <div className="text-center mb-6">
         <h3
@@ -166,11 +190,21 @@ export default function DetailsPage() {
       </section>
 
       {/* ================= ENTOURAGE ================= */}
-      <section
-        id="entourage"
-        className="py-16 md:py-24 px-4 md:px-6 bg-[#f3f3f3] text-center"
-      >
+ <section
+  id="entourage"
+  className="
+    py-16 md:py-24 px-4 md:px-6 text-center
+    bg-[url('/whitetexture2.jpg')] 
+    bg-cover bg-center bg-no-repeat
+  "
+>
+        <div className="max-w-4xl mx-auto space-y-8 md:space-y-10">
+          <h2 className={`${playfair.className} text-2xl md:text-4xl`}>
+            ENTOURAGE
+          </h2>
+        </div>
         {/* Principal Sponsors */}
+
         <div className="max-w-4xl mx-auto space-y-8 md:space-y-10">
           <h2 className={`${playfair.className} text-2xl md:text-4xl`}>
             PRINCIPAL SPONSORS
@@ -304,8 +338,24 @@ export default function DetailsPage() {
           <div className="w-32 h-32 md:w-40 md:h-40 mx-auto bg-black/80 flex items-center justify-center text-white">
             QR
           </div>
+          <button
+            className="
+    px-8 md:px-10 py-3
+    text-xs md:text-sm tracking-[0.25em]
+    rounded-md
+    border border-[#d6c29a]
+    bg-[#f7efe0]
+    text-[#5a4a2f]
 
-          <button className="px-6 md:px-10 py-2 md:py-3 text-xs md:text-sm tracking-[0.25em] border border-[#8c7a5a] bg-white hover:bg-[#f7efe0] transition">
+    shadow-[0_6px_15px_rgba(0,0,0,0.08)]
+    transition-all duration-300
+
+    hover:bg-[#e8d8b5]
+    hover:border-[#cbb184]
+    hover:shadow-[0_10px_25px_rgba(0,0,0,0.12)]
+    hover:-translate-y-[2px]
+  "
+          >
             CONFIRM ATTENDANCE
           </button>
         </div>
