@@ -83,7 +83,7 @@ export default function Home() {
             </div>
             <div className="relative h-28 sm:h-36 md:h-48 flex-1">
               <Image
-                src="/rightv2.jpg"
+                src="/right.jpg"
                 alt=""
                 fill
                 className="object-cover w-[101%]  "
