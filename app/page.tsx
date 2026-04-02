@@ -26,6 +26,53 @@ const allura = Allura({
   weight: ["400"],
 });
 
+export const seasons = localFont({
+  src: [
+    {
+      path: "../public/fonts/theseasons-reg.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/theseasons-it.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/theseasons-bd.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/theseasons-bdit.otf",
+      weight: "700",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/theseasons-lt.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/theseasons-ltit.otf",
+      weight: "300",
+      style: "italic",
+    },
+  ],
+  variable: "--font-seasons",
+  display: "swap",
+});
+
+export const cormorant = localFont({
+  src: [
+    { path: "../public/fonts/CormorantGaramond-Regular.ttf", weight: "400" },
+    { path: "../public/fonts/CormorantGaramond-Medium.ttf", weight: "500" },
+    { path: "../public/fonts/CormorantGaramond-SemiBold.ttf", weight: "600" },
+    { path: "../public/fonts/CormorantGaramond-Bold.ttf", weight: "700" },
+  ],
+  variable: "--font-cormorant",
+});
+
 export default function Home() {
   const weddingDate = new Date("2026-06-20T00:00:00");
 
@@ -75,13 +122,13 @@ export default function Home() {
 
           {/* IMAGE STRIP */}
           <div className="relative flex w-full overflow-hidden">
-            <div className="relative h-28 sm:h-36 md:h-48 flex-1">
+            <div className="relative h-40 sm:h-52 md:h-64 flex-1">
               <Image src="/left.jpg" alt="" fill className="object-cover" />
             </div>
-            <div className="relative h-28 sm:h-36 md:h-48 flex-1">
+            <div className="relative h-40 sm:h-52 md:h-64 flex-1">
               <Image src="/middle.jpg" alt="" fill className="object-cover" />
             </div>
-            <div className="relative h-28 sm:h-36 md:h-48 flex-1">
+            <div className="relative h-40 sm:h-52 md:h-64 flex-1">
               <Image
                 src="/right.jpg"
                 alt=""
@@ -95,11 +142,11 @@ export default function Home() {
           <div className="relative px-6 sm:px-8 md:px-10 pt-6 pb-10 sm:pb-12 text-center text-black">
             {/* Names */}
             <h1
-              className={`${seasonsLight.className} text-3xl sm:text-4xl md:text-5xl leading-[1.1] tracking-[0.08em] mb-6 text-[#2f2a26]`}
+              className={`${cormorant.className} whitespace-nowrap text-lg sm:text-xl md:text-4xl leading-[1.1] tracking-[0.08em] mb-6 text-[#2f2a26]`}
             >
-              GABRIEL
-              <br />
-              <span className={`${playfair.className}`}>&</span> MARIELLE
+              <span className="font-bold">GABRIEL</span>{" "}
+              <span className="font-normal">&</span>{" "}
+              <span className="font-bold">MARIELLE</span>
             </h1>
 
             {/* Subtitle */}
