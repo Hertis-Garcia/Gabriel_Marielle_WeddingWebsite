@@ -61,65 +61,64 @@ const WeddingCalendar = () => {
         relative
         bg-[#f4efe7]
         border border-[#d6c29a]/50
-        rounded-t-[120px] rounded-b-[20px]
-        px-6 py-8 md:px-8 md:py-10
-        max-w-[260px] mx-auto
+        rounded-t-[100px] md:rounded-t-[120px] rounded-b-[18px]
+        
+        px-3 py-3 sm:px-4 sm:py-4 md:px-6 md:py-6
+        max-w-[160px] sm:max-w-[200px] md:max-w-[240px] mx-auto
 
-        /* OUTER DEPTH (stronger elevation) */
-        shadow-[0_20px_60px_rgba(0,0,0,0.12),0_8px_20px_rgba(0,0,0,0.08)]
+        shadow-[0_12px_30px_rgba(0,0,0,0.10),0_6px_15px_rgba(0,0,0,0.06)]
 
-        /* SOFT GLOW BORDER (champagne highlight) */
-        before:absolute before:inset-0 before:rounded-t-[120px] before:rounded-b-[20px]
-        before:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.4),inset_0_0_25px_rgba(214,194,154,0.25)]
+        before:absolute before:inset-0 before:rounded-t-[100px] md:before:rounded-t-[120px] before:rounded-b-[18px]
+        before:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.4),inset_0_0_20px_rgba(214,194,154,0.2)]
         before:pointer-events-none
 
-        /* EDGE LIGHTING (top highlight for realism) */
         after:absolute after:top-0 after:left-0 after:w-full after:h-1/2
-        after:bg-gradient-to-b after:from-white/30 after:to-transparent
-        after:rounded-t-[120px]
+        after:bg-gradient-to-b after:from-white/25 after:to-transparent
+        after:rounded-t-[100px] md:after:rounded-t-[120px]
         after:pointer-events-none
       "
     >
-      <div
-        className="
-    absolute top-5 left-5
-    text-[#c9a96a]
-    opacity-80
-  "
-      ></div>
       {/* MONTH */}
-      <div className="text-center mb-6">
+      <div className="text-center mb-2 md:mb-3">
         <h3
-          className={`${playfair.className} text-xl md:text-2xl text-[#2f2a26]`}
+          className={`${playfair.className} text-base sm:text-lg md:text-xl text-[#2f2a26]`}
         >
           June
         </h3>
         <p
-          className={`${allura.className} text-sm md:text-base text-[#bfa46f]`}
+          className={`${allura.className} text-[10px] sm:text-xs md:text-sm text-[#bfa46f]`}
         >
           2026
         </p>
       </div>
 
       {/* WEEK DAYS */}
-      <div className="grid grid-cols-7 text-center mb-3">
+      <div className="grid grid-cols-7 text-center mb-1">
         {weekDays.map((d) => (
-          <span key={d} className="text-[10px] tracking-[0.2em] text-[#b0a79c]">
+          <span
+            key={d}
+            className="text-[8px] sm:text-[9px] md:text-[10px] tracking-[0.15em] text-[#b0a79c]"
+          >
             {d}
           </span>
         ))}
       </div>
 
       {/* DAYS */}
-      <div className="grid grid-cols-7 gap-y-3 text-center">
+      <div className="grid grid-cols-7 gap-y-1 md:gap-y-2 text-center">
         {days.map((day, i) => (
-          <div key={i} className="flex justify-center items-center h-8">
+          <div
+            key={i}
+            className="flex justify-center items-center h-5 sm:h-6 md:h-7"
+          >
             {day === 20 ? (
-              <div className="w-8 h-8 flex items-center justify-center bg-[#c9a96a] text-white rounded-full text-sm shadow-md">
+              <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 flex items-center justify-center bg-[#c9a96a] text-white rounded-full text-[9px] sm:text-[10px] md:text-xs shadow-sm">
                 {day}
               </div>
             ) : (
-              <span className={`${garamond.className} text-sm text-[#4a453f]`}>
+              <span
+                className={`${garamond.className} text-[10px] sm:text-xs md:text-sm text-[#4a453f]`}
+              >
                 {day || ""}
               </span>
             )}
@@ -183,8 +182,8 @@ export default function DetailsPage() {
             </h1>
           </div>
 
-          {/* 🎬 LARGE VIDEO (breaks out of text width) */}
-          <div className="w-full max-w-none mt-10 px-2 md:px-12">
+          {/* 🎬 LARGE VIDEO (balanced width) */}
+          <div className="w-full max-w-5xl mx-auto mt-10 px-2 md:px-8">
             <div className="bg-white p-3 md:p-4 shadow-xl md:shadow-2xl">
               <div className="aspect-video">
                 <iframe
@@ -197,31 +196,42 @@ export default function DetailsPage() {
 
           {/* LOWER TEXT */}
           <div className="max-w-4xl mx-auto space-y-4 mt-10">
-            <p className={`${seasons.className} text-base md:text-lg`}>
-              REQUEST THE HONOR OF YOUR PRESENCE
-              <br />
-              AS WE UNITE IN THE SACRAMENT OF HOLY MATRIMONY
-            </p>
+            {/* LOWER TEXT */}
+            <div className="max-w-4xl mx-auto space-y-4 mt-10">
+              <p
+                className={`${seasons.className} text-xs sm:text-sm md:text-lg`}
+              >
+                REQUEST THE HONOR OF YOUR PRESENCE
+                <br />
+                AS WE UNITE IN THE SACRAMENT OF HOLY MATRIMONY
+              </p>
 
-            <p className={`${seasons.className} text-base md:text-lg`}>
-              SATURDAY, THE TWENTIETH OF JUNE
-              <br />
-              TWO THOUSAND AND TWENTY SIX
-              <br />
-              AT TWO O’CLOCK IN THE AFTERNOON
-            </p>
+              <p
+                className={`${seasons.className} text-xs sm:text-sm md:text-lg`}
+              >
+                SATURDAY, THE TWENTIETH OF JUNE
+                <br />
+                TWO THOUSAND AND TWENTY SIX
+                <br />
+                AT TWO O’CLOCK IN THE AFTERNOON
+              </p>
 
-            <p className={`${seasons.className} text-base md:text-lg`}>
-              ST. MICHAEL THE ARCHANGEL PARISH
-              <br />
-              GEN. EVANGELISTA STREET, POBLACION, BACOOR, CAVITE
-            </p>
+              <p
+                className={`${seasons.className} text-xs sm:text-sm md:text-lg`}
+              >
+                ST. MICHAEL THE ARCHANGEL PARISH
+                <br />
+                GEN. EVANGELISTA STREET, POBLACION, BACOOR, CAVITE
+              </p>
 
-            <p className={`${seasons.className} text-base md:text-lg`}>
-              RECEPTION TO FOLLOW IMMEDIATELY AT THE
-              <br />
-              ASRIBALI COUNTRYSIDE GARDEN, BACOOR CAVITE
-            </p>
+              <p
+                className={`${seasons.className} text-xs sm:text-sm md:text-lg`}
+              >
+                RECEPTION TO FOLLOW IMMEDIATELY AT THE
+                <br />
+                ASRIBALI COUNTRYSIDE GARDEN, BACOOR CAVITE
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -238,20 +248,20 @@ export default function DetailsPage() {
         <div className="max-w-3xl mx-auto">
           {/* Title */}
           <h2
-            className={`${seasons.className} text-3xl md:text-5xl tracking-[0.25em] mb-12`}
+            className={`${seasons.className} text-2xl sm:text-3xl md:text-5xl tracking-[0.25em] mb-10 md:mb-12`}
           >
             ENTOURAGE
           </h2>
 
           {/* PRINCIPAL SPONSORS */}
-          <div className="mb-12">
-            <p className="tracking-[0.3em] text-xs md:text-sm mb-3">
+          <div className="mb-10 md:mb-12">
+            <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2 md:mb-3">
               PRINCIPAL SPONSORS
             </p>
 
-            <div className="grid grid-cols-2 gap-x-16 text-sm leading-relaxed">
+            <div className="grid grid-cols-2 gap-x-6 md:gap-x-16">
               <div
-                className={`${garamond.className} text-base md:text-3xl leading-relaxed whitespace-nowrap space-y-2`}
+                className={`${garamond.className} text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
               >
                 <p>Mr. Jose Labrador Oblefias</p>
                 <p>Mr. Darwin Garcia</p>
@@ -264,7 +274,7 @@ export default function DetailsPage() {
               </div>
 
               <div
-                className={`${garamond.className} text-base md:text-3xl leading-relaxed whitespace-nowrap space-y-2`}
+                className={`${garamond.className} text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
               >
                 <p>Mrs. Nariza Oblefias</p>
                 <p>Mrs. Delia Garcia</p>
@@ -280,11 +290,11 @@ export default function DetailsPage() {
           </div>
 
           {/* BEST MEN / MAID OF HONOR */}
-          <div className="grid grid-cols-2 gap-x-16 text-sm mb-10">
+          <div className="grid grid-cols-2 gap-x-6 md:gap-x-16 mb-8 md:mb-10">
             <div
-              className={`${garamond.className} text-base md:text-3xl leading-relaxed whitespace-nowrap space-y-2`}
+              className={`${garamond.className} text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
             >
-              <p className="tracking-[0.3em] text-xs md:text-sm mb-3">
+              <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
                 BEST MEN
               </p>
               <p>Mr. Mark Adrian Pabalan</p>
@@ -292,14 +302,14 @@ export default function DetailsPage() {
             </div>
 
             <div
-              className={`${garamond.className} text-base md:text-3xl leading-relaxed whitespace-nowrap space-y-2`}
+              className={`${garamond.className} text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
             >
-              <p className="tracking-[0.3em] text-xs md:text-sm mb-3">
+              <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
                 MAID OF HONOR
               </p>
               <p>Ms. Maryll Camille Cantillo</p>
 
-              <p className="tracking-[0.3em] text-xs md:text-sm mt-6 mb-3">
+              <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mt-4 mb-2">
                 MATRON OF HONOR
               </p>
               <p>Mrs. Michelle Delos Reyes</p>
@@ -307,11 +317,11 @@ export default function DetailsPage() {
           </div>
 
           {/* GROOMSMEN / BRIDESMAIDS */}
-          <div className="grid grid-cols-2 gap-x-16 text-sm mb-12">
+          <div className="grid grid-cols-2 gap-x-6 md:gap-x-16 mb-10 md:mb-12">
             <div
-              className={`${garamond.className} text-base md:text-3xl leading-relaxed whitespace-nowrap space-y-2`}
+              className={`${garamond.className} text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
             >
-              <p className="tracking-[0.3em] text-xs md:text-sm mb-3">
+              <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
                 GROOMSMEN
               </p>
               <p>Mr. Jeffrey Millado</p>
@@ -322,9 +332,9 @@ export default function DetailsPage() {
             </div>
 
             <div
-              className={`${garamond.className} text-base md:text-3xl leading-relaxed whitespace-nowrap space-y-2`}
+              className={`${garamond.className} text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
             >
-              <p className="tracking-[0.3em] text-xs md:text-sm mb-3">
+              <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
                 BRIDESMAIDS
               </p>
               <p>Mrs. Fatima Reyes</p>
@@ -336,32 +346,36 @@ export default function DetailsPage() {
           </div>
 
           {/* SECONDARY SPONSORS */}
-          <div className="flex justify-center gap-12 md:gap-20 mb-10">
-            <div className="w-[260px] text-center">
+          <div className="flex justify-center gap-6 md:gap-20 mb-8 md:mb-10">
+            <div className="w-[100px] sm:w-[140px] md:w-[260px]">
               <div
-                className={`${garamond.className} text-base md:text-3xl whitespace-nowrap space-y-2`}
+                className={`${garamond.className} text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
               >
-                <p className="tracking-[0.3em] text-xs md:text-sm mb-3">CORD</p>
+                <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
+                  CORD
+                </p>
                 <p>Daryll James Garcia</p>
                 <p>Angelique Caballo</p>
               </div>
             </div>
 
-            <div className="w-[260px] text-center">
+            <div className="w-[100px] sm:w-[140px] md:w-[260px]">
               <div
-                className={`${garamond.className} text-base md:text-3xl whitespace-nowrap space-y-2`}
+                className={`${garamond.className} text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
               >
-                <p className="tracking-[0.3em] text-xs md:text-sm mb-3">VEIL</p>
+                <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
+                  VEIL
+                </p>
                 <p>John Conrad Aranda</p>
                 <p>Crystal Aranda</p>
               </div>
             </div>
 
-            <div className="w-[260px] text-center">
+            <div className="w-[100px] sm:w-[140px] md:w-[260px]">
               <div
-                className={`${garamond.className} text-base md:text-3xl whitespace-nowrap space-y-2`}
+                className={`${garamond.className} text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
               >
-                <p className="tracking-[0.3em] text-xs md:text-sm mb-3">
+                <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
                   CANDLE
                 </p>
                 <p>Erickson Jean Pabalan</p>
@@ -371,34 +385,34 @@ export default function DetailsPage() {
           </div>
 
           {/* BEARERS */}
-          <div className="flex justify-center gap-12 md:gap-20 mb-10">
-            <div className="w-[260px] text-center">
+          <div className="flex justify-center gap-6 md:gap-20 mb-8 md:mb-10">
+            <div className="w-[100px] sm:w-[140px] md:w-[260px]">
               <div
-                className={`${garamond.className} text-base md:text-3xl whitespace-nowrap space-y-2`}
+                className={`${garamond.className} text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
               >
-                <p className="tracking-[0.3em] text-xs md:text-sm mb-3">
+                <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
                   COIN BEARER
                 </p>
                 <p>Noah Grayson Reyes</p>
               </div>
             </div>
 
-            <div className="w-[260px] text-center">
+            <div className="w-[100px] sm:w-[140px] md:w-[260px]">
               <div
-                className={`${garamond.className} text-base md:text-3xl whitespace-nowrap space-y-2`}
+                className={`${garamond.className} text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
               >
-                <p className="tracking-[0.3em] text-xs md:text-sm mb-3">
+                <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
                   RING BEARER
                 </p>
                 <p>Kaiden Ezekiel Aranda</p>
               </div>
             </div>
 
-            <div className="w-[260px] text-center">
+            <div className="w-[100px] sm:w-[140px] md:w-[260px]">
               <div
-                className={`${garamond.className} text-base md:text-3xl whitespace-nowrap space-y-2`}
+                className={`${garamond.className} text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
               >
-                <p className="tracking-[0.3em] text-xs md:text-sm mb-3">
+                <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
                   BIBLE BEARER
                 </p>
                 <p>Leon Atlas Montes</p>
@@ -408,20 +422,19 @@ export default function DetailsPage() {
 
           {/* FLOWER GIRLS */}
           <div
-            className={`${garamond.className} text-base md:text-3xl leading-relaxed`}
+            className={`${garamond.className} text-xs sm:text-sm md:text-3xl tracking-[0.02em] leading-relaxed`}
           >
-            <p className="tracking-[0.3em] text-xs md:text-sm mb-4">
+            <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-3">
               FLOWER GIRLS
             </p>
 
-            <div className="flex justify-center gap-16 md:gap-24 whitespace-nowrap">
+            <div className="flex justify-center gap-6 md:gap-24 whitespace-nowrap">
               <p>Olivia Simone Aranda</p>
               <p>Winona Joe Paracale</p>
             </div>
           </div>
         </div>
       </section>
-
       {/* ================= DETAILS ================= */}
       <section
         id="details"
@@ -429,19 +442,24 @@ export default function DetailsPage() {
       >
         <div className="max-w-5xl mx-auto space-y-20">
           <div className="text-center mx-auto">
-            <h3 className={`${playfair.className} text-3xl md:text-5xl mb-14`}>
+            <h3
+              className={`${playfair.className} text-2xl sm:text-3xl md:text-5xl mb-10 md:mb-14`}
+            >
               DETAILS
             </h3>
-            <h3 className={`${playfair.className} text-2xl md:text-4xl mb-4`}>
+            <h3
+              className={`${playfair.className} text-xl sm:text-2xl md:text-4xl mb-4`}
+            >
               Attire
             </h3>
           </div>
+
           {/* ================= ATTIRE ================= */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-2 gap-6 md:gap-10 items-center">
             {/* LEFT TEXT */}
-            <div className="text-center md:text-left">
+            <div className="text-center md:text-left px-2 sm:px-4 md:px-0">
               <p
-                className={`${garamond.className} text-xl md:text-3xl leading-relaxed font-semibold`}
+                className={`${garamond.className} text-sm sm:text-base md:text-3xl leading-relaxed font-semibold`}
               >
                 STRICTLY ALL BLACK, plain or printed
                 <br />
@@ -450,9 +468,9 @@ export default function DetailsPage() {
               </p>
             </div>
 
-            {/* RIGHT IMAGES */}
+            {/* RIGHT IMAGE */}
             <div className="grid grid-cols-1 gap-4">
-              <div className="h-48 md:h-64 overflow-hidden rounded-sm">
+              <div className="h-32 sm:h-40 md:h-64 overflow-hidden rounded-sm">
                 <img
                   src="/attire.png"
                   alt="Attire Guide"
@@ -465,36 +483,31 @@ export default function DetailsPage() {
           {/* ================= DIRECTIONS ================= */}
           <div className="space-y-10">
             <h3
-              className={`${playfair.className} text-2xl md:text-4xl text-center`}
+              className={`${playfair.className} text-xl sm:text-2xl md:text-4xl text-center`}
             >
               Directions
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
-              {/* LEFT: CALENDAR */}
-              <div className="flex justify-center md:justify-start">
-                <WeddingCalendar />
-              </div>
-
-              {/* RIGHT: LOCATIONS */}
-              <div className="space-y-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-start">
+              {/* RIGHT CONTENT (but FIRST on mobile) */}
+              <div className="space-y-10 order-1 md:order-2">
                 {/* CEREMONY */}
-                <div className="text-center md:text-left">
+                <div className="text-center md:text-left px-2 sm:px-4 md:px-0">
                   <h4
-                    className={`${playfair.className} text-xl md:text-2xl mb-2`}
+                    className={`${playfair.className} text-lg sm:text-xl md:text-3xl mb-2`}
                   >
                     Ceremony
                   </h4>
 
                   <p
-                    className={`${garamond.className} mb-4 text-base md:text-lg leading-relaxed`}
+                    className={`${garamond.className} mb-4 text-base sm:text-2xl md:text-3xl leading-relaxed`}
                   >
                     {venueName}
                     <br />
                     {venueAddress}
                   </p>
 
-                  <div className="h-40 md:h-48 border border-[#d6c29a]/30">
+                  <div className="h-32 sm:h-40 md:h-48 border border-[#d6c29a]/30">
                     <iframe
                       width="100%"
                       height="100%"
@@ -506,15 +519,15 @@ export default function DetailsPage() {
                 </div>
 
                 {/* RECEPTION */}
-                <div className="text-center md:text-left">
+                <div className="text-center md:text-left px-2 sm:px-4 md:px-0">
                   <h4
-                    className={`${playfair.className}text-xl md:text-2xl mb-2`}
+                    className={`${playfair.className} text-lg sm:text-xl md:text-3xl mb-2`}
                   >
                     Reception
                   </h4>
 
                   <p
-                    className={`${garamond.className} mb-4 text-base md:text-lg leading-relaxed`}
+                    className={`${garamond.className} mb-4 text-base sm:text-2xl md:text-3xl leading-relaxed`}
                   >
                     Asribali Countryside Garden
                     <br />
@@ -522,7 +535,7 @@ export default function DetailsPage() {
                     Bacoor, Philippines
                   </p>
 
-                  <div className="h-40 md:h-48 border border-[#d6c29a]/30 overflow-hidden">
+                  <div className="h-32 sm:h-40 md:h-48 border border-[#d6c29a]/30 overflow-hidden">
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15452.571519215036!2d120.95619139001303!3d14.476483792989788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397cdcc43b0f837%3A0x6d7a47c0be1184f7!2sAsribali%20Countryside%20Garden!5e0!3m2!1sen!2sph!4v1775114633748!5m2!1sen!2sph"
                       width="100%"
@@ -530,10 +543,14 @@ export default function DetailsPage() {
                       style={{ border: 0 }}
                       allowFullScreen={true}
                       loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
                     />
                   </div>
                 </div>
+              </div>
+
+              {/* CALENDAR (LAST on mobile, LEFT on desktop) */}
+              <div className="flex justify-center md:justify-start order-2 md:order-1">
+                <WeddingCalendar />
               </div>
             </div>
           </div>
@@ -541,17 +558,17 @@ export default function DetailsPage() {
           {/* ================= FAQS ================= */}
           <div>
             <h3
-              className={`${playfair.className} text-2xl md:text-3xl text-center mb-10`}
+              className={`${playfair.className} text-xl sm:text-2xl md:text-3xl text-center mb-8 md:mb-10`}
             >
               FAQs
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm md:text-base">
+            <div className="grid grid-cols-2 gap-6 md:gap-20 text-xs sm:text-sm md:text-2xl leading-relaxed">
               {/* COLUMN 1 */}
-              <div className={`${garamond.className} space-y-6`}>
+              <div className={`${garamond.className} space-y-4 md:space-y-6`}>
                 <div>
                   <p className="font-semibold mb-1">
-                    NOTES FOR YOUR LITTLE ONES{" "}
+                    NOTES FOR YOUR LITTLE ONES
                   </p>
                   <p>
                     While we absolutely love your little ones, we have decided
@@ -562,17 +579,17 @@ export default function DetailsPage() {
               </div>
 
               {/* COLUMN 2 */}
-              <div className={`${garamond.className} space-y-6`}>
+              <div className={`${garamond.className} space-y-4 md:space-y-6`}>
                 <div>
                   <p
-                    className={`${seasons.className}italic font-semibold mb-1`}
+                    className={`${garamond.className} italic font-semibold mb-1`}
                   >
                     GIFTS
                   </p>
                   <p>
                     With all that we have, we have been truly blessed. Your
                     presence and prayers are all that we request, but if you
-                    desire to give nonethless, a monetary gift is one we
+                    desire to give nonetheless, a monetary gift is one we
                     suggest.
                   </p>
                 </div>
@@ -603,21 +620,21 @@ export default function DetailsPage() {
               )
             }
             className="
-    px-8 md:px-10 py-3
-    text-xs md:text-sm tracking-[0.25em]
-    rounded-md
-    border border-[#d6c29a]
-    bg-[#f7efe0]
-    text-[#5a4a2f]
+              px-8 md:px-10 py-3
+              text-xs md:text-sm tracking-[0.25em]
+              rounded-md
+              border border-[#d6c29a]
+              bg-[#f7efe0]
+              text-[#5a4a2f]
 
-    shadow-[0_6px_15px_rgba(0,0,0,0.08)]
-    transition-all duration-300
+              shadow-[0_6px_15px_rgba(0,0,0,0.08)]
+              transition-all duration-300
 
-    hover:bg-[#e8d8b5]
-    hover:border-[#cbb184]
-    hover:shadow-[0_10px_25px_rgba(0,0,0,0.12)]
-    hover:-translate-y-[2px]
-  "
+              hover:bg-[#e8d8b5]
+              hover:border-[#cbb184]
+              hover:shadow-[0_10px_25px_rgba(0,0,0,0.12)]
+              hover:-translate-y-[2px]
+            "
           >
             CLICK HERE TO RSVP
           </button>
