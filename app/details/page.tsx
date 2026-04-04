@@ -169,7 +169,7 @@ export default function DetailsPage() {
   return (
     <main className="relative min-h-screen flex justify-center bg-neutral-900">
       {/* BACKGROUND IMAGE */}
-      <div className="absolute inset-0 bg-[url('/sample4.png')] bg-fixed "></div>
+      <div className="absolute inset-0 bg-[url('/sample3.png')] bg-fixed "></div>
 
       {/* CONTENT WRAPPER */}
       <motion.main
