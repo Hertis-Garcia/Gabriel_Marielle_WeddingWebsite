@@ -265,7 +265,7 @@ export default function DetailsPage() {
         </section>
 
         {/* ================= DIVIDER ================= */}
-        <div className="flex justify-center my-4 md:my-6">
+        <div className="flex justify-center my-2 md:my-2">
           <div className="w-64 md:w-128 h-[2px] bg-black" />
         </div>
 
@@ -278,7 +278,15 @@ export default function DetailsPage() {
   "
         >
           <div className="max-w-3xl mx-auto">
-            {/* Title */}
+            {/* TOP FLOWER */}
+            <div className="flex justify-center mb-6 md:mb-8 -mt-10 md:-mt-16">
+              {" "}
+              <img
+                src="/flower.png"
+                alt="Attire Guide"
+                className="w-[210px] sm:w-[210px] md:w-[420px] h-auto object-contain"
+              />
+            </div>
             <h2
               className={`${seasons.className} text-2xl sm:text-3xl md:text-5xl tracking-[0.25em] mb-10 md:mb-12`}
             >
@@ -368,7 +376,7 @@ export default function DetailsPage() {
                 <p>Mr. Jeffrey Millado</p>
                 <p>Mr. John Mark Gonzales</p>
                 <p>Mr. Jermelle Fresnosa</p>
-                <p>Mr. Jeoffrey Francis Arma</p>
+                <p className="whitespace-nowrap">Mr. Jeoffrey Francis Arma</p>
                 <p>Mr. King Philip Pabalan</p>
               </div>
 
@@ -461,8 +469,9 @@ export default function DetailsPage() {
                 <p>Olivia Simone Aranda</p>
                 <p>Winona Joe Paracale</p>
               </div>
+              <br></br>
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-2 md:mt-4">
               <img
                 src="/flower.png"
                 alt="Attire Guide"
@@ -473,7 +482,7 @@ export default function DetailsPage() {
         </section>
 
         {/* ================= DIVIDER ================= */}
-        <div className="flex justify-center my-4 md:my-6">
+        <div className="flex justify-center mt-1 mb-2">
           <div className="w-64 md:w-128 h-[2px] bg-black" />
         </div>
 
@@ -656,7 +665,7 @@ export default function DetailsPage() {
         </section>
 
         {/* ================= DIVIDER ================= */}
-        <div className="flex justify-center my-4 md:my-6">
+        <div className="flex justify-center my-2 md:my-2">
           <div className="w-64 md:w-128 h-[2px] bg-black" />
         </div>
 
