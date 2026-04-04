@@ -426,15 +426,12 @@ export default function DetailsPage() {
               <p>Winona Joe Paracale</p>
             </div>
           </div>
-
-          <div className="w-full max-w-lg md:max-w-2xl mx-auto">
-            <div className="h-52 sm:h-64 md:h-[420px] overflow-hidden rounded-sm">
-              <img
-                src="/flower.png"
-                alt="Attire Guide"
-                className="w-full h-full object-cover"
-              />
-            </div>
+          <div className="flex justify-center">
+            <img
+              src="/flower.png"
+              alt="Attire Guide"
+              className="w-[210px] sm:w-[210px] md:w-[420px] h-auto object-contain"
+            />
           </div>
         </div>
       </section>
