@@ -171,7 +171,7 @@ export default function DetailsPage() {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
-      className="text-[#2f2a26] bg-[url('/bg.png')] bg-cover bg-center bg-fixed"
+      className="text-[#2f2a26] bg-[url('/texture2.jpg')] bg-cover bg-center bg-fixed"
     >
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full flex justify-center py-4 md:py-6 z-50 backdrop-blur-sm bg-black/20 overflow-x-auto">
