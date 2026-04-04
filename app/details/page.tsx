@@ -138,7 +138,15 @@ export default function DetailsPage() {
   };
 
   return (
-    <main className="text-[#2f2a26]">
+    <main
+      className="
+    text-[#2f2a26]
+    bg-[url('/bg.png')]
+    bg-cover
+    bg-center
+    bg-fixed
+  "
+    >
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full flex justify-center py-4 md:py-6 z-50 backdrop-blur-sm bg-black/20 overflow-x-auto">
         <div className="flex gap-6 md:gap-10 text-[10px] md:text-sm tracking-[0.25em] md:tracking-[0.3em] text-white whitespace-nowrap px-4">
@@ -157,8 +165,7 @@ export default function DetailsPage() {
         className="relative flex flex-col items-center text-center px-4 md:px-6 py-20"
       >
         {/* Background */}
-        <div className="absolute inset-0 bg-[url('/bg.png')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-[#e8d8b5]/70"></div>
+        <div className="absolute inset-0  "></div>
 
         <div className="relative z-10 w-full">
           {/* TEXT CONTENT (kept centered & narrow) */}
@@ -194,19 +201,14 @@ export default function DetailsPage() {
 
           {/* LOWER TEXT */}
           <div className="max-w-4xl mx-auto space-y-4 mt-10">
-            {/* LOWER TEXT */}
             <div className="max-w-4xl mx-auto space-y-4 mt-10">
-              <p
-                className={`${seasons.className} text-xs sm:text-sm md:text-lg`}
-              >
+              <p className={`${seasons.className} text-base md:text-2xl `}>
                 REQUEST THE HONOR OF YOUR PRESENCE
                 <br />
                 AS WE UNITE IN THE SACRAMENT OF HOLY MATRIMONY
               </p>
 
-              <p
-                className={`${seasons.className} text-xs sm:text-sm md:text-lg`}
-              >
+              <p className={`${seasons.className} text-base md:text-2xl `}>
                 SATURDAY, THE TWENTIETH OF JUNE
                 <br />
                 TWO THOUSAND AND TWENTY SIX
@@ -214,17 +216,13 @@ export default function DetailsPage() {
                 AT TWO O’CLOCK IN THE AFTERNOON
               </p>
 
-              <p
-                className={`${seasons.className} text-xs sm:text-sm md:text-lg`}
-              >
+              <p className={`${seasons.className} text-base md:text-2xl`}>
                 ST. MICHAEL THE ARCHANGEL PARISH
                 <br />
                 GEN. EVANGELISTA STREET, POBLACION, BACOOR, CAVITE
               </p>
 
-              <p
-                className={`${seasons.className} text-xs sm:text-sm md:text-lg`}
-              >
+              <p className={`${seasons.className} text-base md:text-2xl`}>
                 RECEPTION TO FOLLOW IMMEDIATELY AT THE
                 <br />
                 ASRIBALI COUNTRYSIDE GARDEN, BACOOR CAVITE
@@ -234,13 +232,17 @@ export default function DetailsPage() {
         </div>
       </section>
 
+      {/* ================= DIVIDER ================= */}
+      <div className="flex justify-center my-4 md:my-6">
+        <div className="w-64 md:w-128 h-[2px] bg-black" />
+      </div>
+
       {/* ================= ENTOURAGE ================= */}
       <section
         id="entourage"
         className="
     py-16 md:py-24 px-4 md:px-6 text-center
-    bg-[url('/whitetexture2.jpg')] 
-    bg-cover bg-center bg-no-repeat
+
   "
       >
         <div className="max-w-3xl mx-auto">
@@ -252,53 +254,42 @@ export default function DetailsPage() {
           </h2>
 
           {/* PRINCIPAL SPONSORS */}
-          <div className="mb-10 md:mb-12">
+          {/* ================= PRINCIPAL SPONSORS ================= */}
+          <div className="mb-10 md:mb-12 text-center">
             <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
               PRINCIPAL SPONSORS
             </p>
 
-            <div className="grid grid-cols-2 gap-x-6 md:gap-x-16">
+            <div className="grid grid-cols-2 gap-x-6 md:gap-x-16 justify-center">
+              {/* LEFT COLUMN */}
               <div
-                className={`${seasons.className} text-right text-xs sm:text-sm md:text-3xl tracking-[0.02em] space-y-[2px] sm:space-y-1 md:space-y-2`}
+                className={`${seasons.className} flex flex-col items-end text-xs sm:text-sm md:text-3xl tracking-[0.02em] space-y-[2px] sm:space-y-1 md:space-y-2`}
               >
-                <p className="block w-full whitespace-nowrap">
-                  Mr. Jose Labrador Oblefias
-                </p>
-                <p className="block w-full whitespace-nowrap">
-                  Mr. Darwin Garcia
-                </p>
-                <p className="block w-full whitespace-nowrap">
-                  Mr. Leo Mascarinas
-                </p>
-                <p className="block w-full whitespace-nowrap">
-                  Mr. George La Salle
-                </p>
-                <p className="block w-full whitespace-nowrap">
-                  Engr. Fernando Balbarino
-                </p>
-                <p className="block w-full whitespace-nowrap">
-                  Mr. Ronnie Javier
-                </p>
-                <p className="block w-full whitespace-nowrap">
-                  Mr. Erwin Nethercott
-                </p>
-                <p className="block w-full whitespace-nowrap">
+                <p className="whitespace-nowrap">Mr. Jose Labrador Oblefias</p>
+                <p className="whitespace-nowrap">Mr. Darwin Garcia</p>
+                <p className="whitespace-nowrap">Mr. Leo Mascariñas</p>
+                <p className="whitespace-nowrap">Mr. George La Salle</p>
+                <p className="whitespace-nowrap">Engr. Fernando Balbarino</p>
+                <p className="whitespace-nowrap">Mr. Ronnie Javier</p>
+                <p className="whitespace-nowrap">Mr. Erwin Nethercott</p>
+                <p className="whitespace-nowrap">
                   Mr. Rafael Gallego Hortigosa
                 </p>
               </div>
 
+              {/* RIGHT COLUMN */}
               <div
-                className={`${seasons.className} text-left text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
+                className={`${seasons.className} flex flex-col items-start text-xs sm:text-sm md:text-3xl tracking-[0.02em] space-y-[2px] sm:space-y-1 md:space-y-2`}
               >
-                <p>Mrs. Nariza Oblefias</p>
-                <p>Mrs. Delia Garcia</p>
-                <p>Dra. Michele Fajardo</p>
-                <p>Dra. Noravi Delgado</p>
-                <p>Mrs. Grace Cruzada</p>
-                <p>Mrs. Amelia Espiritu</p>
-                <p>Mrs. Noraida Nethercott</p>
-                <p>Mrs. Marilyn Hortigosa</p>
-                <p>Mrs. Marietta Cheng</p>
+                <p className="whitespace-nowrap">Mrs. Nariza Oblefias</p>
+                <p className="whitespace-nowrap">Mrs. Delia Garcia</p>
+                <p className="whitespace-nowrap">Dra. Michele Fajardo</p>
+                <p className="whitespace-nowrap">Dra. Noravi Delgado</p>
+                <p className="whitespace-nowrap">Mrs. Grace Cruzada</p>
+                <p className="whitespace-nowrap">Mrs. Amelia Espiritu</p>
+                <p className="whitespace-nowrap">Mrs. Noraida Nethercott</p>
+                <p className="whitespace-nowrap">Mrs. Marilyn Hortigosa</p>
+                <p className="whitespace-nowrap">Mrs. Marietta Cheng</p>
               </div>
             </div>
           </div>
@@ -340,7 +331,7 @@ export default function DetailsPage() {
               </p>
               <p>Mr. Jeffrey Millado</p>
               <p>Mr. John Mark Gonzales</p>
-              <p>Mr. Jermelle Fresnoza</p>
+              <p>Mr. Jermelle Fresnosa</p>
               <p>Mr. Jeffrey Francis Arma</p>
               <p>Mr. King Philip Pabalan</p>
             </div>
@@ -353,7 +344,7 @@ export default function DetailsPage() {
               </p>
               <p>Mrs. Fatima Reyes</p>
               <p>Mrs. Jessercene Camille Gonzales</p>
-              <p>Mrs. Vanessa Rose Fresnoza</p>
+              <p>Mrs. Vanessa Rose Fresnosa</p>
               <p>Mrs. Ma. Roxanne Arma</p>
               <p>Mrs. Arianne Que</p>
             </div>
@@ -362,7 +353,7 @@ export default function DetailsPage() {
           {/* SECONDARY SPONSORS */}
           <div className="flex justify-center gap-6 md:gap-20 mb-8 md:mb-10">
             <div
-              className={`${seasons.className} text-center text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
+              className={`${seasons.className} text-center text-[10px] sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
             >
               <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
                 CORD
@@ -372,7 +363,7 @@ export default function DetailsPage() {
             </div>
 
             <div
-              className={`${seasons.className} text-center text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
+              className={`${seasons.className} text-center text-[10px] sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
             >
               <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
                 VEIL
@@ -382,7 +373,7 @@ export default function DetailsPage() {
             </div>
 
             <div
-              className={`${seasons.className} text-center text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
+              className={`${seasons.className} text-center text-[10px] sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
             >
               <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
                 CANDLE
@@ -395,7 +386,7 @@ export default function DetailsPage() {
           {/* BEARERS */}
           <div className="flex justify-center gap-6 md:gap-20 mb-8 md:mb-10">
             <div
-              className={`${seasons.className} text-center text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
+              className={`${seasons.className} text-center text-[10px] sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
             >
               <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
                 COIN BEARER
@@ -404,7 +395,7 @@ export default function DetailsPage() {
             </div>
 
             <div
-              className={`${seasons.className} text-center text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
+              className={`${seasons.className} text-center text-[10px] sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
             >
               <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
                 RING BEARER
@@ -413,7 +404,7 @@ export default function DetailsPage() {
             </div>
 
             <div
-              className={`${seasons.className} text-center text-xs sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
+              className={`${seasons.className} text-center text-[10px] sm:text-sm md:text-3xl tracking-[0.02em] whitespace-nowrap space-y-[2px] sm:space-y-1 md:space-y-2`}
             >
               <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
                 BIBLE BEARER
@@ -435,13 +426,26 @@ export default function DetailsPage() {
               <p>Winona Joe Paracale</p>
             </div>
           </div>
+
+          <div className="w-full max-w-lg md:max-w-2xl mx-auto">
+            <div className="h-52 sm:h-64 md:h-[420px] overflow-hidden rounded-sm">
+              <img
+                src="/flower.png"
+                alt="Attire Guide"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* ================= DIVIDER ================= */}
+      <div className="flex justify-center my-4 md:my-6">
+        <div className="w-64 md:w-128 h-[2px] bg-black" />
+      </div>
+
       {/* ================= DETAILS ================= */}
-      <section
-        id="details"
-        className="py-16 md:py-24 px-4 md:px-6 bg-[#f7efe0]"
-      >
+      <section id="details" className="py-16 md:py-24 px-4 md:px-6">
         <div className="max-w-5xl mx-auto space-y-12 md:space-y-16">
           <div className="text-center mx-auto">
             <h2
@@ -618,11 +622,13 @@ export default function DetailsPage() {
         </div>
       </section>
 
+      {/* ================= DIVIDER ================= */}
+      <div className="flex justify-center my-4 md:my-6">
+        <div className="w-64 md:w-128 h-[2px] bg-black" />
+      </div>
+
       {/* ================= RSVP ================= */}
-      <section
-        id="rsvp"
-        className="py-16 md:py-24 px-4 md:px-6 bg-[#e8d8b5] text-center"
-      >
+      <section id="rsvp" className="py-16 md:py-24 px-4 md:px-6  text-center">
         <div className="max-w-xl mx-auto space-y-6">
           <h2
             className={`${seasons.className} text-2xl sm:text-3xl md:text-5xl tracking-[0.25em] mb-10 md:mb-12`}
