@@ -282,7 +282,9 @@ export default function DetailsPage() {
           {/* PRINCIPAL SPONSORS */}
           {/* ================= PRINCIPAL SPONSORS ================= */}
           <div className="mb-10 md:mb-12 text-center">
-            <p className="tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2">
+            <p
+              className={`${seasons.className} tracking-[0.3em] text-[9px] sm:text-[10px] md:text-sm mb-2`}
+            >
               PRINCIPAL SPONSORS
             </p>
 
@@ -312,7 +314,7 @@ export default function DetailsPage() {
                 <p className="whitespace-nowrap">Dra. Michele Fajardo</p>
                 <p className="whitespace-nowrap">Dra. Noravi Delgado</p>
                 <p className="whitespace-nowrap">Mrs. Grace Cruzada</p>
-                <p className="whitespace-nowrap">Mrs. Amelia Espiritu</p>
+                <p className="whitespace-nowrap">Mrs. Amalia Espiritu</p>
                 <p className="whitespace-nowrap">Mrs. Noraida Nethercott</p>
                 <p className="whitespace-nowrap">Mrs. Marilyn Hortigosa</p>
                 <p className="whitespace-nowrap">Mrs. Marietta Cheng</p>
@@ -358,7 +360,7 @@ export default function DetailsPage() {
               <p>Mr. Jeffrey Millado</p>
               <p>Mr. John Mark Gonzales</p>
               <p>Mr. Jermelle Fresnosa</p>
-              <p>Mr. Jeffrey Francis Arma</p>
+              <p>Mr. Jeoffrey Francis Arma</p>
               <p>Mr. King Philip Pabalan</p>
             </div>
 
@@ -369,7 +371,7 @@ export default function DetailsPage() {
                 BRIDESMAIDS
               </p>
               <p>Mrs. Fatima Reyes</p>
-              <p>Mrs. Jessercene Camille Gonzales</p>
+              <p>Mrs. Jesserene Camille Gonzales</p>
               <p>Mrs. Vanessa Rose Fresnosa</p>
               <p>Mrs. Ma. Roxanne Arma</p>
               <p>Mrs. Arianne Que</p>
