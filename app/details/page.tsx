@@ -3,6 +3,8 @@
 import { Playfair_Display, EB_Garamond, Allura } from "next/font/google";
 import { cormorant } from "../page";
 import { seasons } from "../page";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 const venueName = "St. Michael the Archangel Parish";
 const venueAddress = "Gen. Evangelista Street, Poblacion, Bacoor, Cavite";
@@ -136,16 +138,40 @@ export default function DetailsPage() {
     const y = el.getBoundingClientRect().top + window.pageYOffset - 70;
     window.scrollTo({ top: y, behavior: "smooth" });
   };
+  useEffect(() => {
+    const elements = document.querySelectorAll(".fade-in");
 
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+      },
+    );
+
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1.2 },
+    },
+  };
   return (
-    <main
-      className="
-    text-[#2f2a26]
-    bg-[url('/bg.png')]
-    bg-cover
-    bg-center
-    bg-fixed
-  "
+    <motion.main
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+      className="text-[#2f2a26] bg-[url('/bg.png')] bg-cover bg-center bg-fixed"
     >
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full flex justify-center py-4 md:py-6 z-50 backdrop-blur-sm bg-black/20 overflow-x-auto">
@@ -162,7 +188,7 @@ export default function DetailsPage() {
       {/* ================= STORY ================= */}
       <section
         id="story"
-        className="relative flex flex-col items-center text-center px-4 md:px-6 py-20"
+        className="relative flex flex-col items-center text-center px-4 md:px-6 py-20 fade-in"
       >
         {/* Background */}
         <div className="absolute inset-0  "></div>
@@ -202,13 +228,13 @@ export default function DetailsPage() {
           {/* LOWER TEXT */}
           <div className="max-w-4xl mx-auto space-y-4 mt-10">
             <div className="max-w-4xl mx-auto space-y-4 mt-10">
-              <p className={`${seasons.className} text-base md:text-2xl `}>
+              <p className={`${seasons.className} text-xs md:text-2xl `}>
                 REQUEST THE HONOR OF YOUR PRESENCE
                 <br />
                 AS WE UNITE IN THE SACRAMENT OF HOLY MATRIMONY
               </p>
 
-              <p className={`${seasons.className} text-base md:text-2xl `}>
+              <p className={`${seasons.className} text-xs md:text-2xl `}>
                 SATURDAY, THE TWENTIETH OF JUNE
                 <br />
                 TWO THOUSAND AND TWENTY SIX
@@ -216,13 +242,13 @@ export default function DetailsPage() {
                 AT TWO O’CLOCK IN THE AFTERNOON
               </p>
 
-              <p className={`${seasons.className} text-base md:text-2xl`}>
+              <p className={`${seasons.className} text-xs md:text-2xl`}>
                 ST. MICHAEL THE ARCHANGEL PARISH
                 <br />
                 GEN. EVANGELISTA STREET, POBLACION, BACOOR, CAVITE
               </p>
 
-              <p className={`${seasons.className} text-base md:text-2xl`}>
+              <p className={`${seasons.className} text-xs md:text-2xl`}>
                 RECEPTION TO FOLLOW IMMEDIATELY AT THE
                 <br />
                 ASRIBALI COUNTRYSIDE GARDEN, BACOOR CAVITE
@@ -241,7 +267,7 @@ export default function DetailsPage() {
       <section
         id="entourage"
         className="
-    py-16 md:py-24 px-4 md:px-6 text-center
+    py-16 md:py-24 px-4 md:px-6 text-center fade-in
 
   "
       >
@@ -442,7 +468,7 @@ export default function DetailsPage() {
       </div>
 
       {/* ================= DETAILS ================= */}
-      <section id="details" className="py-16 md:py-24 px-4 md:px-6">
+      <section id="details" className="py-16 md:py-24 px-4 md:px-6 fade-in">
         <div className="max-w-5xl mx-auto space-y-12 md:space-y-16">
           <div className="text-center mx-auto">
             <h2
@@ -625,7 +651,10 @@ export default function DetailsPage() {
       </div>
 
       {/* ================= RSVP ================= */}
-      <section id="rsvp" className="py-16 md:py-24 px-4 md:px-6  text-center">
+      <section
+        id="rsvp"
+        className="py-16 md:py-24 px-4 md:px-6  text-center fade-in"
+      >
         <div className="max-w-xl mx-auto space-y-6">
           <h2
             className={`${seasons.className} text-2xl sm:text-3xl md:text-5xl tracking-[0.25em] mb-10 md:mb-12`}
@@ -677,6 +706,6 @@ export default function DetailsPage() {
           </button>
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 }
