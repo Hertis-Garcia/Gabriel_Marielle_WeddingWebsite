@@ -235,7 +235,7 @@ export default function DetailsPage() {
             <div className="max-w-4xl mx-auto space-y-4 mt-10">
               <div className="max-w-4xl mx-auto space-y-4 mt-10">
                 <p className={`${seasons.className} text-xs md:text-2xl `}>
-                  REQUEST THE HONOR OF YOUR PRESENCE
+                  WE REQUEST THE HONOR OF YOUR PRESENCE
                   <br />
                   AS WE UNITE IN THE SACRAMENT OF HOLY MATRIMONY
                 </p>
