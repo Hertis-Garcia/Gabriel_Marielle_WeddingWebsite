@@ -170,14 +170,6 @@ export default function DetailsPage() {
     <main className="relative min-h-screen flex justify-center bg-neutral-900">
       {/* BACKGROUND IMAGE */}
       <div className="absolute inset-0 bg-[url('/white.png')] bg-fixed "></div>
-
-      {/* CONTENT WRAPPER */}
-      <motion.main
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-        className="relative w-full text-[#2f2a26]"
-      >
         <nav className="fixed top-0 w-full flex justify-center py-4 md:py-6 z-50 backdrop-blur-sm bg-black/20 overflow-x-auto">
           <div className="flex gap-6 md:gap-10 text-[10px] md:text-sm tracking-[0.25em] md:tracking-[0.3em] text-white whitespace-nowrap px-4">
             <button onClick={() => scrollToSection("story")}>
@@ -190,6 +182,14 @@ export default function DetailsPage() {
             <button onClick={() => scrollToSection("rsvp")}>RSVP</button>
           </div>
         </nav>
+      {/* CONTENT WRAPPER */}
+      <motion.main
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        className="relative w-full text-[#2f2a26]"
+      >
+
 
         {/* ================= STORY ================= */}
         <section
