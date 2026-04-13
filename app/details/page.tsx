@@ -245,7 +245,7 @@ export default function DetailsPage() {
                   <br />
                   TWO THOUSAND AND TWENTY SIX
                   <br />
-                  AT TWO O’CLOCK IN THE AFTERNOON
+                  AT 2 O’ CLOCK IN THE AFTERNOON
                 </p>
 
                 <p className={`${seasons.className} text-xs md:text-2xl`}>
